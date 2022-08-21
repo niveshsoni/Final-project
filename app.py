@@ -112,7 +112,7 @@ def import_and_predict_cat(image_data):
 
 @app.route('/Deep learning/cat/cat')
 def cat():
-    return render_template('/Deeplearning/cat/cat.html')
+    return render_template('/Deep learning/cat/cat.html')
 
 
 @app.route('/Deep learning/cat/cat',  methods=['GET', 'POST'])
@@ -137,7 +137,7 @@ def cat1():
 
         
 
-        return render_template('/ann/cat/catoutput.html', model_name=my_model_name,my_dataset=input_image, pred=preds, visualize=input )
+        return render_template('/deep learning/cat/catoutput.html', model_name=my_model_name,my_dataset=input_image, pred=preds, visualize=input )
 #-----------------------Digit Recognition---------------------------------------------
 model_digit = load_model("static/data-preprocess/model/MNISTANN.h5")
 
