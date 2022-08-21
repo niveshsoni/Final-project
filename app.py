@@ -80,9 +80,9 @@ def aboutusnew():
 #------------------------------Artificial Neural network-------------------------------------------
 
 
-@app.route('/ann')
+@app.route('/Deep learning')
 def ann():
-    return render_template('/ann/ann.html')
+    return render_template('/Deep learning/Deep learning.html')
 
 #----------------------Image Classification cat/ Dog------------------------------
 model_cat = load_model("static/data-preprocess/model/FDPCNN1.h5")
@@ -110,12 +110,12 @@ def import_and_predict_cat(image_data):
   return prediction
 
 
-@app.route('/ann/cat/cat')
+@app.route('/Deep learning/cat/cat')
 def cat():
-    return render_template('/ann/cat/cat.html')
+    return render_template('/Deeplearning/cat/cat.html')
 
 
-@app.route('/ann/cat/cat',  methods=['GET', 'POST'])
+@app.route('/Deep learning/cat/cat',  methods=['GET', 'POST'])
 def cat1():
    
     if request.method == 'POST':
@@ -158,7 +158,7 @@ def import_and_predict(image_data):
 
 @app.route('/ann/digit/digit')
 def digit():
-    return render_template('/ann/digit/digit.html')
+    return render_template('/Deep learning/digit/digit.html')
 
 
 @app.route('/ann/digit/digit',  methods=['GET', 'POST'])
@@ -183,7 +183,7 @@ def digit1():
 
         
 
-        return render_template('/ann/digit/digitoutput.html', model_name=my_model_name,my_dataset=input_image, pred=preds, visualize=input )
+        return render_template('/Deep learning/digit/digitoutput.html', model_name=my_model_name,my_dataset=input_image, pred=preds, visualize=input )
 
 
 #------------------------------Convolution  Neural network-------------------------------------------
@@ -191,7 +191,7 @@ def digit1():
 
 @app.route('/cnn')
 def cnn():
-    return render_template('/cnn/cnn.html')
+    return render_template('/Deep learning/cnn.html')
 
 #------------------------------Face Recognition-------------------------------------------
 model_face = load_model("static/data-preprocess/model/Facemodel.h5")
@@ -216,10 +216,10 @@ def predict_face(image_data):
 
 @app.route('/cnn/face/face')
 def face():
-    return render_template('/cnn/Face/face.html')
+    return render_template('/Machine learning/Face/face.html')
 
 
-@app.route('/cnn/face/face',  methods=['GET', 'POST'])
+@app.route('/Machine learning/face/face',  methods=['GET', 'POST'])
 def face1():
    
     if request.method == 'POST':
@@ -241,7 +241,7 @@ def face1():
 
         
 
-        return render_template('/cnn/Face/faceoutput.html', model_name=my_model_name,my_dataset=input_image, pred=preds, visualize=input )
+        return render_template('/Machine learning/Face/faceoutput.html', model_name=my_model_name,my_dataset=input_image, pred=preds, visualize=input )
 
 
 
@@ -258,4 +258,5 @@ def add_header(response):
     response.headers['Expires'] = '-1'
     return response
 app.config["CACHE_TYPE"] = "null"
+
 
